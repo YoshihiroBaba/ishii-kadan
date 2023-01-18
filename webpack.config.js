@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "js/[name]-[contenthash].js",
-    publicPath: "./",
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -46,7 +46,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg|svg|gif)/,
+        test: /\.(png|jpe?g|svg|gif)$/,
         type: "asset/resource",
         generator: {
           filename: "images/[name]-[contenthash][ext]",
@@ -78,7 +78,7 @@ module.exports = {
     // new RemoveEmptyScriptsPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "./css/[name]-[contenthash].css",
+      filename: "css/[name]-[contenthash].css",
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/index.html",
