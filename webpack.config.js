@@ -63,7 +63,7 @@ module.exports = {
           {
             loader: "image-webpack-loader",
             options: {
-
+              // limit: 8192
             },
           },
         ],

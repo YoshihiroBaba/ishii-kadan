@@ -1,0 +1,12 @@
+.c-gnav {
+    display: flex;
+    padding-left: 120px;
+    justify-content: left;
+    align-items: center;
+    &__list {
+        display: flex;
+        li {
+            margin-right: 30px;
+        }
+    }
+}

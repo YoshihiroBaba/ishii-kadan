@@ -1,0 +1,88 @@
+@use "../../foundation/foundation" as *;
+
+.p-alternate{
+    margin-top: -16px;
+    &__inner {
+        margin: 0 auto;
+        max-width: 1900px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    &__contents{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 122px;
+        height: auto;
+        align-items: center;
+
+        @include responsive--min(lg){
+            flex-direction: row-reverse;
+            justify-content: left;
+            align-items: start;
+        }
+    }
+
+    &__thumb{
+        img {
+            object-fit: cover;
+            height: 545px;
+            width: 1050px;
+
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        > a {
+            margin-top: 75px;
+            text-align: center;
+        }
+        @include responsive(lg){
+            max-width: 1000px;
+        }
+        @include responsive--min(lg){
+            padding-left: 137px;
+            // margin-top: -20px;
+            align-items: start;
+        }
+    }
+    &__ttl {
+        font-size: 36px;
+        margin-top: 32px;
+        font-weight: 500;
+        line-height: 1.72em;
+        height: 98px;
+        @include responsive(lg){
+            height: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        br {
+            @include responsive(lg){
+                display: none;
+            }
+        }
+    }
+    &__txt{
+        margin-top: 75px;
+        line-height: 2em;
+        height: 80px;
+        font-weight: 500;
+        @include responsive(lg){
+            height: auto;
+            margin-top: 40px;
+            text-align: center;
+        }
+        >p {
+            font-weight: 500;
+            >br {
+                @include responsive(lg){
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
