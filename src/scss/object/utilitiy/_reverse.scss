@@ -2,8 +2,8 @@
 
 .u--reverse {
     @include responsive--min(lg){
-        flex-direction: row;
-        justify-content: right;
+        flex-direction: row !important;
+        justify-content: right !important;
     }
 }
 

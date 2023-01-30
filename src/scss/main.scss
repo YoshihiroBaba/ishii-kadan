@@ -1,3 +1,368 @@
 @use "./foundation/foundation" as *;
 @use "./layout/header" as *;
 @use "./object/object" as *;
+
+// mv
+
+.mv{
+    // position: relative;
+    // height: 1780px;
+    &__img {
+        width: 100%;
+        height: 1079px;
+        overflow: hidden;
+        position: relative;
+        &--1, &--2, &--3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1079px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            z-index: 10;
+            opacity: 0;
+            @include animation($name: fade, $duration: 24s, $delay: 0s);
+            perspective: 1000;
+        }
+        &--1 {
+            background-image: url(../images/mainbg01.jpg);
+        }
+        &--2 {
+            background-image: url(../images/mainbg02.jpg);
+            animation-delay: 8s;
+        }
+        &--3 {
+            background-image: url(../images/mainbg03.jpg);
+            animation-delay: 16s;
+        }
+
+    }
+    &__txt {
+        top: 362px;
+        left: 71.77%;
+        transform: translateX(-71.77%);
+        // height: 286px;
+        position: absolute;
+        display: flex;
+        color: #ffffff;
+        z-index: 20;
+        >h2 {
+            width: 1em;
+            font-size: 2.125em;
+            writing-mode: vertical-rl;
+            letter-spacing: 0.3em;
+            margin-left: 0;
+        }
+        &__l {
+            margin-right: 1.5em;
+        }
+        &__r {
+            margin-right: 0;
+        }
+    }
+    &__copy {
+        width: 100%;
+        height: 681px;
+        background-image: url(../images/bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        &__inner{
+            writing-mode: vertical-rl;
+            max-width: 1160px;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            >h2 {
+                font-size: 1.75em;
+                font-weight: 500;
+                letter-spacing: 0.4em;
+                width: 28px;
+            }
+            p {
+                font-weight: 500;
+                letter-spacing: 0.35em;
+            }
+        }
+        &__ttlr {
+            margin-right: 118px;
+            margin-top: 64px;
+        }
+        &__ttll {
+            margin-right: 33px;
+            margin-top: 149px;
+        }
+        &__txtr, &__txtm, &__txtl {
+            width: 92px;
+            margin-top: 149px;
+            margin-right: 118px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &__txtr span {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+        &__end{
+            // width: 22px;
+            margin-top: 443px;
+            margin-right: 118px;
+            font-size: 1.375em;
+        }
+    }
+}
+
+@keyframes fade {
+    0%{
+        transform-origin: center;
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+// メイン市松レイアウト
+
+.alternate{
+    margin-top: -16px;
+    padding-bottom: 44px;
+    &__inner {
+        margin: 0 auto;
+        max-width: 1900px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    &__contents{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 122px;
+        height: auto;
+        align-items: center;
+
+        @include responsive--min(lg){
+            flex-direction: row-reverse;
+            justify-content: left;
+            align-items: start;
+        }
+    }
+
+    &__thumb{
+        img {
+            object-fit: cover;
+            height: 545px;
+            width: 1050px;
+
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        > a {
+            margin-top: 75px;
+            text-align: center;
+        }
+        @include responsive(lg){
+            max-width: 1000px;
+        }
+        @include responsive--min(lg){
+            padding-left: 137px;
+            // margin-top: -20px;
+            align-items: start;
+        }
+    }
+    &__ttl {
+        font-size: 36px;
+        margin-top: 32px;
+        font-weight: 500;
+        line-height: 1.72em;
+        height: 98px;
+        @include responsive(lg){
+            height: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        br {
+            @include responsive(lg){
+                display: none;
+            }
+        }
+    }
+    &__txt{
+        margin-top: 75px;
+        line-height: 2em;
+        height: 80px;
+        font-weight: 500;
+        @include responsive(lg){
+            height: auto;
+            margin-top: 40px;
+            text-align: center;
+        }
+        >p {
+            font-weight: 500;
+            >br {
+                @include responsive(lg){
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+// おすすめプラン
+
+.plan {
+    background-image: url(../images/bg02.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 78px;
+    padding-top: 60px;
+    padding-bottom: 144px;
+    width: 100%;
+}
+
+// お知らせ
+
+.notice {
+    padding-top: 60px;
+    &__inner {
+        margin: 0 auto;
+        max-width: 1210px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    &__nav {
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        >li {
+            margin-right: 53px;
+            width: 69px;
+            &:last-child{
+                margin-right: 0;
+            }
+            a {
+                font-weight: 500;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 49px;
+        margin-bottom: 60px;
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+// アクセス
+
+.access {
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 110px;
+    &__info {
+        max-width: 1500px;
+        margin: 66px auto 69px auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+        // flex-wrap: wrap;
+        @include responsive(lg){
+        max-width: 1200px;
+        }
+        &__body {
+            margin-left: 83px;
+            // padding-top: 15px;
+            @include responsive(lg){
+                margin-left: 40px;
+                padding-right: 10px;
+            }
+            p {
+                font-weight: 500;
+                line-height: 1.8em;
+            }
+        }
+        &__ttl {
+            font-weight: 900;
+            margin-bottom: 0.9em;
+        }
+        &__txt {
+            margin-bottom: 1em;
+        }
+        &__notice {
+            br {
+            @include responsive(lg){
+                display: none;
+            }
+            }
+
+        }
+    }
+    &__img {
+        position: relative;
+        min-width: 656px;
+        height: 370px;
+        // margin-right: 83px;
+        margin-left: 150px;
+        @include responsive(lg){
+            max-width: 656px;
+            margin-left: 0;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include responsive(lg){
+                width: 95%;
+            }
+    }
+    }
+    &__map {
+        position: relative;
+        max-width: 762px;
+        margin: auto;
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 74.75%;
+        }
+        >iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include responsive(lg){
+                width: 90%;
+                height: 90%;
+            }
+        }
+    }
+
+}

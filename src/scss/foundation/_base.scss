@@ -2,17 +2,21 @@ body {
     font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "MS Ｐ明朝", "MS PMincho", serif;
 }
 
-a, h2, p {
+a, h2, h3, p, time {
     font-size: 16px;
     font-family: "游明朝体";
     font-weight: 800;
     margin: 0;
 }
 
-a {
+a{
     text-decoration: none;
+    color: #000;
 }
 
+li {
+    list-style: none;
+}
 figure {
     margin: 0;
 }
