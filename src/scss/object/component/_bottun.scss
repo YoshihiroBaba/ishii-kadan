@@ -6,19 +6,32 @@
     align-items: center;
     &__img {
         margin-right: 10px;
+        @include responsive(sm){
+            width: 18px;
+        }
     }
     &--header {
         width: 170px;
         height: 54px;
         background-color: $btn-bg;
-        color: #fff;
+        color: $cWhite;
+        @include responsive(sm){
+            width: 120px;
+            height: 35px;
+            font-size: .8em;
+        }
     }
     &--alt {
         width: 200px;
         height: 56px;
-        background-color: #fff;
+        background-color: $cWhite;
         border: 1px solid #707070;
-        color: #000;
+        color: $cBlack;
         font-weight: 500;
+        @include responsive(sm){
+            width: 140px;
+            height: 40px;
+            font-size: .8em;
+        }
     }
 }

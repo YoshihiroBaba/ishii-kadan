@@ -38,6 +38,8 @@
 @mixin responsive--min($size){
   $with:0;
   @if($size == lg){
+      $with:2500px;
+  } @else if($size == md){
       $with:1700px;
   } @else if($size == sm){
       $with:768px;

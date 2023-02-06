@@ -1,3 +1,5 @@
+@use "../../foundation/foundation" as *;
+
 .c-gnav {
     display: flex;
     padding-left: 120px;
@@ -9,5 +11,8 @@
         li {
             margin-right: 30px;
         }
+    }
+    @include responsive(sm){
+        display: none;
     }
 }

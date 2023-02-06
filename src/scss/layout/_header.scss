@@ -5,6 +5,9 @@
     height: 80px;
     z-index: 100;
     position: fixed;
+    @include responsive(sm){
+        height: 60px;
+    }
     &__inner {
         display: flex;
         height: 100%;
@@ -27,5 +30,10 @@
     &__logo {
         width: 200px;
         height: 40px;
+        img {
+        @include responsive(sm){
+            width: 70%;
+        }
+    }
     }
 }

@@ -11,6 +11,10 @@
     @include responsive(lg){
         width: 47.5%;
     }
+    @include responsive(sm){
+        width: 95%;
+        margin-right: 0;
+    }
     &:nth-of-type(2n){
         margin-right: 0;
     }
@@ -29,9 +33,15 @@
     &__time {
         font-size: 14px;
         font-weight: 500;
+        @include responsive(sm){
+            font-size: .8em;
+        }
     }
     &__txt {
         font-weight: 500;
         line-height: 1.8em;
+        @include responsive(sm){
+            font-size: .9em;
+        }
     }
 }

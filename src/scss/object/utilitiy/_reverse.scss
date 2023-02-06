@@ -1,14 +1,14 @@
 @use "../../foundation/foundation" as *;
 
 .u--reverse {
-    @include responsive--min(lg){
+    @include responsive--min(md){
         flex-direction: row !important;
         justify-content: right !important;
     }
 }
 
 .u-mg--right {
-    @include responsive--min(lg){
+    @include responsive--min(md){
     margin-right: 174px;
     }
 }
