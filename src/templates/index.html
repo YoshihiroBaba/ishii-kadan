@@ -19,14 +19,27 @@
           <a href="" class="l-header__logo"
             ><img src="../images/top-header-logo.png" alt=""
           /></a>
+          <a href="" class="l-header__logo u-dis--none"
+            ><img src="../images/sub-header-logo.jpg" alt=""
+          /></a>
         </h1>
-        <nav class="c-gnav">
-          <ul class="c-gnav__list">
-            <li><a href="">お部屋</a></li>
-            <li><a href="">お料理</a></li>
-            <li><a href="">温泉</a></li>
-          </ul>
-        </nav>
+        <div>
+          <nav class="c-gnav">
+            <ul class="c-gnav__list l-sub-header--white">
+              <li><a href="">お部屋</a></li>
+              <li><a href="">お料理</a></li>
+              <li><a href="">温泉</a></li>
+            </ul>
+          </nav>
+          <nav class="c-gnav__burger">
+            <ul class="c-gnav__burger__list">
+              <li><a href="">お部屋</a></li>
+              <li><a href="">お料理</a></li>
+              <li><a href="">温泉</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- /.c-burger -->
         <a href="" type="button" class="c-btn c-btn--header"
           ><img
             src="../images/calender.png"
@@ -34,11 +47,10 @@
             class="c-btn__img"
           />宿泊予約</a
         >
-        <button class="c-menu-icon"
-        onclick="document.querySelector('body').classList.toggle('menu-open');">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="c-menu-icon l-sub-header--white" id="c-menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
       <!-- /.l-header__inner -->
@@ -211,69 +223,73 @@
         </div>
         <div class="notice__inner">
           <ul class="notice__nav">
-            <li><a href="">営業情報</a></li>
-            <li><a href="">その他</a></li>
+            <li class="--active">営業情報</li>
+            <li>その他</li>
           </ul>
-          <ul class="notice__wrapper">
-            <li class="p-media">
-              <figure class="p-media__thumb">
-                <img src="../images/news01.png" alt="" />
-              </figure>
-              <div class="p-media__body">
-                <time class="p-media__time">2020.12.24</time>
-                <p class="p-media__txt">年末最後の営業日は27日になります。</p>
-              </div>
-            </li>
-            <li class="p-media">
-              <figure class="p-media__thumb">
-                <img src="../images/news02.png" alt="" />
-              </figure>
-              <div class="p-media__body">
-                <time class="p-media__time">2020.12.24</time>
-                <p class="p-media__txt">年末最後の営業日のお知らせ</p>
-              </div>
-            </li>
-            <li class="p-media">
-              <figure class="p-media__thumb">
-                <img src="../images/news02.png" alt="" />
-              </figure>
-              <div class="p-media__body">
-                <time class="p-media__time">2020.12.11</time>
-                <p class="p-media__txt">
-                  12.21は臨時休業とさせていただきますので、よろしくお願いします。
-                </p>
-              </div>
-            </li>
-            <li class="p-media">
-              <figure class="p-media__thumb">
-                <img src="../images/news01.png" alt="" />
-              </figure>
-              <div class="p-media__body">
-                <time class="p-media__time">2020.12.24</time>
-                <p class="p-media__txt">年末最後の営業日のお知らせ</p>
-              </div>
-            </li>
-            <li class="p-media">
-              <figure class="p-media__thumb">
-                <img src="../images/news01.png" alt="" />
-              </figure>
-              <div class="p-media__body">
-                <time class="p-media__time">2020.12.01</time>
-                <p class="p-media__txt">
-                  和室の改装を行いますため、12.10はお休み させていただきます。
-                </p>
-              </div>
-            </li>
-            <li class="p-media">
-              <figure class="p-media__thumb">
-                <img src="../images/news02.png" alt="" />
-              </figure>
-              <div class="p-media__body">
-                <time class="p-media__time">2020.12.24</time>
-                <p class="p-media__txt">年末最後の営業日のお知らせ</p>
-              </div>
-            </li>
-          </ul>
+          <div class="notice__wrapper">
+            <ul class="--show">
+              <li class="p-media">
+                <figure class="p-media__thumb">
+                  <img src="../images/news01.png" alt="" />
+                </figure>
+                <div class="p-media__body">
+                  <time class="p-media__time">2020.12.24</time>
+                  <p class="p-media__txt">年末最後の営業日は27日になります。</p>
+                </div>
+              </li>
+              <li class="p-media">
+                <figure class="p-media__thumb">
+                  <img src="../images/news02.png" alt="" />
+                </figure>
+                <div class="p-media__body">
+                  <time class="p-media__time">2020.12.24</time>
+                  <p class="p-media__txt">年末最後の営業日のお知らせ</p>
+                </div>
+              </li>
+              <li class="p-media u-dis--none">
+                <figure class="p-media__thumb">
+                  <img src="../images/news02.png" alt="" />
+                </figure>
+                <div class="p-media__body">
+                  <time class="p-media__time">2020.12.11</time>
+                  <p class="p-media__txt">
+                    12.21は臨時休業とさせていただきますので、よろしくお願いします。
+                  </p>
+                </div>
+              </li>
+              <li class="p-media">
+                <figure class="p-media__thumb">
+                  <img src="../images/news01.png" alt="" />
+                </figure>
+                <div class="p-media__body">
+                  <time class="p-media__time">2020.12.24</time>
+                  <p class="p-media__txt">年末最後の営業日のお知らせ</p>
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li class="p-media">
+                <figure class="p-media__thumb">
+                  <img src="../images/news01.png" alt="" />
+                </figure>
+                <div class="p-media__body">
+                  <time class="p-media__time">2020.12.01</time>
+                  <p class="p-media__txt">
+                    和室の改装を行いますため、12.10はお休み させていただきます。
+                  </p>
+                </div>
+              </li>
+              <li class="p-media">
+                <figure class="p-media__thumb">
+                  <img src="../images/news02.png" alt="" />
+                </figure>
+                <div class="p-media__body">
+                  <time class="p-media__time">2020.12.24</time>
+                  <p class="p-media__txt">年末最後の営業日のお知らせ</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- /.notice__inner -->
       </section>
@@ -318,24 +334,37 @@
     </main>
     <footer class="l-footer">
       <div class="l-footer__info">
-          <div class="l-footer__inner">
-            <ul class="l-footer__nav">
-                    <li><a href="">温泉</a></li>
-                    <li><a href="">お料理</a></li>
-                    <li><a href="">お部屋</a></li>
-            </ul>
-            <a href="" class="l-footer__logo"><img src="../images/footer-logo.png" alt=""></a>
-            <div class="l-footer__address">
-                <p class="l-footer__address__code">〒000-0000</p>
-                <p class="l-footer__address__detail"><span>山形県鶴岡市xxxxxxxxxxx</span></p>
-            </div>
-            <div class="l-footer__number">
-                <p class="l-footer__number__tel">TEL.000-0000-0000</p>
-                <p class="l-footer__number__fax">FAX.00-0000-0000</p>
-            </div>
-          </div><!-- /.l-footer__inner -->
+        <div class="l-footer__inner">
+          <ul class="l-footer__nav">
+            <li><a href="">温泉</a></li>
+            <li><a href="">お料理</a></li>
+            <li><a href="">お部屋</a></li>
+          </ul>
+          <a href="" class="l-footer__logo"
+            ><img src="../images/footer-logo.png" alt=""
+          /></a>
+          <div class="l-footer__address">
+            <p class="l-footer__address__code">〒000-0000</p>
+            <p class="l-footer__address__detail">
+              <span>山形県鶴岡市xxxxxxxxxxx</span>
+            </p>
+          </div>
+          <div class="l-footer__number">
+            <p class="l-footer__number__tel">TEL.000-0000-0000</p>
+            <p class="l-footer__number__fax">FAX.00-0000-0000</p>
+          </div>
         </div>
-        <div class="l-footer__bg--black"><small>Copyright © 石井花壇 All Rights Reserved.</small></div>
-    </footer><!-- /.l-footer -->
+        <!-- /.l-footer__inner -->
+      </div>
+      <div class="l-footer__bg--black">
+        <small>Copyright © 石井花壇 All Rights Reserved.</small>
+      </div>
+    </footer>
+    <!-- /.l-footer -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

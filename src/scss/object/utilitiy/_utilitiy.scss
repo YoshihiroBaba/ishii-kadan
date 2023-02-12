@@ -12,3 +12,14 @@
     margin-right: 174px;
     }
 }
+
+.u-dis {
+    &--none{
+        display: none;
+    }
+    &--show {
+        // display: block;
+        left: 50vw;
+    }
+}
+

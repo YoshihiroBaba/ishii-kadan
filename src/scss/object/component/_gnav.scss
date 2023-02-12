@@ -10,6 +10,53 @@
         display: flex;
         li {
             margin-right: 30px;
+            a {
+                color: $cBlack;
+            }
+        }
+    }
+    &__burger {
+        // display: none;
+        // position:relative;
+        top: 0;
+        bottom: 0;
+        left: 100vw;
+        width: 50vw;
+        height: 100vh;
+        background-color: #000;
+        opacity: 0.9;
+        position: fixed;
+        z-index: 10;
+        padding-top: 40%;
+        transition: all .5s;
+        &__list{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            // display: flex;
+            // flex-direction: column;
+            li {
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 30px;
+                height: 30px;
+                width: 80px;
+                &:hover{
+                    border-bottom: 1.5px solid $cWhite;
+                    transition: all 1s;
+                    font-weight: 900;
+                    width: 60%;
+                    &::after {
+                        background-color: gray;
+                    }
+                }
+                a {
+                    padding: 1em;
+                    @include responsive(sm){
+                        font-size: .9em;
+                    }
+                }
+            }
         }
     }
     @include responsive(sm){

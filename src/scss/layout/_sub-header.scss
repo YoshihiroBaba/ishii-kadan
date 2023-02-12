@@ -1,0 +1,21 @@
+@use "../foundation/foundation" as *;
+
+.l-sub-header{
+    &__bg {
+        background-color: $cWhite;
+        opacity: 1;
+    }
+    &--white {
+       a {
+        color: $cWhite !important;
+       }
+       > span {
+        background-color: $cWhite;
+       }
+    }
+    &__logo {
+        display: none;
+    }
+
+}
+

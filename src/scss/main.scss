@@ -2,6 +2,7 @@
 @use "./layout/header" as *;
 @use "./object/object" as *;
 @use "./layout/footer" as *;
+@use "./layout/sub-header" as *;
 
 // mv
 
@@ -376,32 +377,41 @@
         padding-left: 0;
         >li {
             margin-right: 53px;
-            width: 69px;
+            width: fit-content;
+            font-weight: 500;
             &:last-child{
                 margin-right: 0;
             }
             @include responsive(sm){
                 margin-right: 30px;
             }
-            a {
-                font-weight: 500;
-                &:hover {
-                    text-decoration: underline;
-                }
+            &.--active {
+                text-decoration: underline;
             }
+
         }
     }
     &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
         margin-top: 49px;
         margin-bottom: 60px;
         width: 100%;
         padding-left: 0;
-        @include responsive(sm){
-            justify-content: center;
+        ul {
+            width: 100%;
+            padding-left: 0;
+            display: none;
+            flex-wrap: wrap;
+            @include responsive(sm){
+                justify-content: center;
+            }
+            &.--show{
+                display: flex;
+            }
         }
-    }
+        li {
+            display: flex;
+        }
+     }
 }
 
 // アクセス
@@ -479,15 +489,15 @@
         height: 370px;
         // margin-right: 83px;
         margin-left: 150px;
-        // padding-top: 56.4%;
         @include responsive(lg){
             max-width: 656px;
             max-height: 370px;
             margin-left: 0;
         }
         @include responsive(sm){
-            max-width: 90%;
-            max-height: 333px;
+            max-width: 100%;
+            // padding-top: 56.4%;
+            // max-height: 333px;
         }
         img {
             position: absolute;

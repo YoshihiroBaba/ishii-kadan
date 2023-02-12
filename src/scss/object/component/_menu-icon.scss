@@ -4,9 +4,10 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 100;
 
     & > span {
-        background-color: $cWhite;
+        background-color: $cBlack;
         width: 35px;
         height: 2px;
         display: block;
@@ -22,10 +23,8 @@
     }
 }
 
-.menu-open {
-    background-color: $cBlack;
+.c-menu-open {
 
-    & .mobile-menu-icon {
         & > span {
             background-color:$cWhite;
 
@@ -43,5 +42,5 @@
             }
 
         }
-    }
+
 }
