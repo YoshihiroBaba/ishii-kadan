@@ -15,6 +15,7 @@
         height: 54px;
         background-color: $btn-bg;
         color: $cWhite;
+        cursor: pointer;
         @include responsive(sm){
             width: 120px;
             height: 35px;
@@ -33,5 +34,14 @@
             height: 40px;
             font-size: .8em;
         }
+    }
+    &--modal {
+        width: 198px;
+        height: 42px;
+        background-color: $cWhite;
+        border: 1px solid #707070;
+        color: $cBlack;
+        margin-top: 40px;
+        cursor: pointer;
     }
 }

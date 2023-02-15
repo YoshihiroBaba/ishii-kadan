@@ -1,3 +1,4 @@
+import flatpickr from 'flatpickr';
 import '../scss/main.scss';
 
 $(function () {
@@ -6,12 +7,12 @@ $(function () {
     $(".c-menu-icon").on('click', function () {
       $("#c-menu-icon").toggleClass("c-menu-open");
       $(".c-gnav__burger").toggleClass("u-dis--show");
-    //   $(window).scroll(function(){
-    //     $(".burger__menu").slideUp(400).removeClass("is-active");
-    //     $(".burger").removeClass("is-active");
+      $(window).scroll(function(){
+        $("#c-menu-icon").removeClass("c-menu-open");
+        $(".c-gnav__burger").removeClass("u-dis--show");
       });
 
-    // });
+    });
 
     // タブ切り替え
     $('.notice__nav li').click(function(){
@@ -19,7 +20,7 @@ $(function () {
         $('.notice__nav li').removeClass('--active');
         $(this).addClass('--active');
         $('.notice__wrapper ul').removeClass('--show').eq(index).addClass('--show');
-    })
+    });
 
     // ヘッダー
     $(window).scroll(function(){
@@ -33,10 +34,25 @@ $(function () {
         $('.c-gnav__list,.c-menu-icon').addClass('l-sub-header--white');
         $('.l-header__logo').removeClass('u-dis--none').eq(1).addClass('u-dis--none');
         }
-    })
+    });
 
+    // モーダル
+    $("#c-btn--header,.p-modal__form__close").on('click', function () {
+      $(".p-modal, .p-modal__form").toggleClass("u-dis--none");
+      });
 
-    // スクロール
+    // モーダル プルダウンメニュー
+    $(".p-modal__form__select").addClass("is-empty");
+    $(".p-modal__form__select").on("change", function () {
+      if ($(this).val() !== "") {
+        $(this).removeClass("is-empty");
+      }
+      else {
+        $(this).addClass("is-empty");
+      }
+        });
+
+            // スクロール
     // $("a[href^='#']:not([href='#'])").click(function(){
     //   var target = $($(this).attr("href")).offset().top;
     //   target -= 100;
@@ -48,6 +64,13 @@ $(function () {
     // });
 
   });
+let minDate = new Date();
+flatpickr('#calendar', {
+  locale:'ja',
+  minDate: minDate,
+  dateFormat:'Y年m月d日',
+  mode:'range',
+});
 
 
 // AOS.init();

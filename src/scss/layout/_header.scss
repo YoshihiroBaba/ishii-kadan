@@ -5,6 +5,8 @@
     height: 80px;
     z-index: 100;
     position: fixed;
+    // top: 0;
+    // bottom: 0;
     @include responsive(sm){
         height: 60px;
     }

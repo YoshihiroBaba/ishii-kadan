@@ -11,6 +11,8 @@
     <meta name="robots" content="noindex" />
     <!-- <link rel="stylesheet" href="../css/main.css"> -->
     <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body>
     <header class="l-header">
@@ -40,7 +42,7 @@
           </nav>
         </div>
         <!-- /.c-burger -->
-        <a href="" type="button" class="c-btn c-btn--header"
+        <a id="c-btn--header" type="button" class="c-btn c-btn--header"
           ><img
             src="../images/calender.png"
             alt=""
@@ -56,6 +58,45 @@
       <!-- /.l-header__inner -->
     </header>
     <main>
+      <div class="p-modal u-dis--none"></div><!-- /.l-modal -->
+        <div class="p-modal__inner">
+          <div class="p-modal__form u-dis--none">
+            <h2 class="p-modal__form__main-ttl">宿泊予約</h2>
+            <a href="#" class="p-modal__form__close"><img src="../images/close.png" alt=""></a>
+            <hr class="p-modal__form__line">
+            <div class="p-modal__form__item">
+              <label for="username" class="p-modal__form__ttl">お名前</label>
+              <div class="p-modal__form__body">
+                <input type="text" id="username" required placeholder="例：石井正悟">
+              </div>
+            </div><!-- /.p-modal__form -->
+            <div class="p-modal__form__item">
+              <label for="mail" class="p-modal__form__ttl">メールアドレス</label>
+              <div class="p-modal__form__body">
+                <input type="text" id="mail" required placeholder="例：Example@example.com">
+              </div>
+            </div><!-- /.p-modal__form -->
+            <div class="p-modal__form__item">
+              <label for="plan" class="p-modal__form__ttl">ご希望プラン（空いているプランのみ表示されます）</label>
+              <div class="p-modal__form__body">
+                <select name="plan" class="p-modal__form__select" required>
+                  <option value="">プランを選択してください</option>
+                  <option value="plan-1">①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
+                  <option value="plan-2">②平日に優雅に楽しむ、特別宿泊プラン</option>
+                  <option value="plan-3">③絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+                </select>
+              </div>
+            </div><!-- /.p-modal__form -->
+            <div class="p-modal__form__item">
+              <label for="datetime" class="p-modal__form__ttl">日時選択</label>
+              <div class="p-modal__form__body">
+                <input type="text" id="calendar" required placeholder="日時を選択してください">
+              </div>
+            </div><!-- /.p-modal__form -->
+            <button class="c-btn--modal">送信する</button>
+          </div>
+        </div><!-- /.p-modal__inner -->
+
       <section class="mv">
         <div class="mv__img">
           <div class="mv__img--1"></div>
@@ -65,9 +106,7 @@
             <h2 class="mv__txt__l">頑張らない時間</h2>
             <h2 class="mv__txt__r">頑張る人の</h2>
           </div>
-        </div>
-        <!-- /.mv__img -->
-
+        </div><!-- /.mv__img -->
         <div class="mv__copy">
           <div class="mv__copy__inner">
             <div class="mv__copy__body">
@@ -366,5 +405,6 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>

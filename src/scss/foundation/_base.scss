@@ -8,8 +8,14 @@ a, h2, h3, p, time {
     font-weight: 800;
     margin: 0;
 }
+label, button,input,select {
+    font-size: 16px;
+    font-family: "游明朝体";
+    font-weight: 500;
+    margin: 0;
+}
 
-a{
+a {
     text-decoration: none;
     color: #000;
 }

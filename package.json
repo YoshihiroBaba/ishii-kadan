@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-    "scripts": {
+  "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
     "build:dev": "webpack"
@@ -16,6 +16,7 @@
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^5.2.7",
+    "flatpickr": "^4.6.13",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
@@ -29,4 +30,3 @@
     "webpack-remove-empty-scripts": "^1.0.1"
   }
 }
-

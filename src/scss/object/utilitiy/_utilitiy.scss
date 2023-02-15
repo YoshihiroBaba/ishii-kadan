@@ -20,6 +20,9 @@
     &--show {
         // display: block;
         left: 50vw;
+        &--modal{
+            display: block;
+        }
     }
 }
 
