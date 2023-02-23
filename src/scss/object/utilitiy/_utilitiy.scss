@@ -1,15 +1,76 @@
 @use "../../foundation/foundation" as *;
 
 .u--reverse {
-    @include responsive--min(md){
+    @include responsive--min(ml){
         flex-direction: row !important;
         justify-content: right !important;
     }
+    &-sub {
+        @include responsive--min(ms){
+            flex-direction: row !important;
+        }
+    }
+    &-body{
+        @include responsive(md){
+            margin-top: -290px;
+            margin-right: 10vw;
+            padding-top: 330px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        @include responsive(sm){
+            margin-top: -290px;
+            margin-right: 3vw;
+            padding-bottom: 30px;
+            padding-right: 30px;
+            padding-left: 50px;
+        }
+        @include responsive--min(ms){
+            margin-right: -158px ;
+            padding-left: 60px ;
+            padding-right: 209px;
+            padding-top: 58px;
+          }
+        }
+    }
+
+
+.u--normal {
+    &-body {
+        @include responsive(md){
+            margin-top: -290px;
+            margin-left: 10vw;
+            padding-top: 330px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        @include responsive(sm){
+            margin-top: -290px;
+            margin-left: 3vw;
+            padding-bottom: 30px;
+            padding-right: 30px;
+            padding-left: 40px;
+        }
+        @include responsive--min(ms){
+        margin-left: -158px;
+        padding-left: 238px;
+        padding-right: 60px;
+        padding-top: 58px;
+        }
+    }
 }
 
-.u-mg--right {
-    @include responsive--min(md){
-    margin-right: 174px;
+
+.u-mg{
+    &--right {
+        @include responsive--min(ml){
+        margin-right: 174px;
+        }
+    }
+    &--bottom {
+        @include responsive--min(ms){
+            margin-bottom: 156.5px !important;
+        }
     }
 }
 
@@ -25,4 +86,5 @@
         }
     }
 }
+
 

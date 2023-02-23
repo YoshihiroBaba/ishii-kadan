@@ -43,5 +43,8 @@
         color: $cBlack;
         margin-top: 40px;
         cursor: pointer;
+        @include responsive(sm){
+            margin-top: 35px;
+        }
     }
 }

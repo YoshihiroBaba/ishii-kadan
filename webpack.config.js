@@ -76,12 +76,25 @@ module.exports = {
   },
   plugins: [
     // new RemoveEmptyScriptsPlugin(),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "css/[name]-[contenthash].css",
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/index.html",
+      filename:"index.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/templates/menu.html",
+      filename:"menu.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/templates/room.html",
+      filename:"room.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/templates/hot-spring.html",
+      filename:"hot-spring.html",
+    }),
+    new CleanWebpackPlugin(),
   ],
 };

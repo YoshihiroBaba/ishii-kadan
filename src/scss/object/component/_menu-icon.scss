@@ -21,6 +21,9 @@
     @include responsive--min(sm){
         display: none;
     }
+    &--sub {
+        @extend .c-menu-icon;
+    }
 }
 
 .c-menu-open {

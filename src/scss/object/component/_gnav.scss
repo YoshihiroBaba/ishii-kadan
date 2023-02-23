@@ -14,6 +14,9 @@
                 color: $cBlack;
             }
         }
+        &--sub{
+            @extend .c-gnav__list;
+        }
     }
     &__burger {
         // display: none;

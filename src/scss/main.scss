@@ -3,6 +3,7 @@
 @use "./object/object" as *;
 @use "./layout/footer" as *;
 @use "./layout/sub-header" as *;
+@use "./layout/sub-main" as *;
 
 // mv
 
@@ -244,9 +245,11 @@
     padding-bottom: 44px;
     &__inner {
         margin: 0 auto;
-        max-width: 1900px;
-        padding-left: 10px;
-        padding-right: 10px;
+        max-width: 1920px;
+        @include responsive(md){
+            padding-right: 10px;
+            padding-left: 10px;
+        }
     }
     &__contents{
         display: flex;
@@ -254,8 +257,7 @@
         margin-top: 122px;
         height: auto;
         align-items: center;
-
-        @include responsive--min(md){
+        @include responsive--min(ml){
             flex-direction: row-reverse;
             justify-content: left;
             align-items: start;
@@ -263,17 +265,17 @@
     }
 
     &__thumb{
-        max-width: 1050px;
-        height: auto;
-        @include responsive(md){
-            width: 80%;
-        }
-        @include responsive(sm){
-            width: 100%;
-        }
+
         img {
+            width: 1050px;
+            height: 545px;
             object-fit: cover;
-            width: 100%;
+            @include responsive(md){
+                width: 95vw;
+            }
+            @include responsive(sm){
+                max-height: 300px;
+            }
         }
     }
     &__body {
@@ -286,16 +288,17 @@
             text-align: center;
         }
         @include responsive(lg){
-            max-width: 1000px;
-        }
-        @include responsive(md){
             max-width: 600px;
         }
-        @include responsive(sm){
-            padding-left: 10px;
+        @include responsive(md){
             padding-right: 10px;
+            padding-left: 10px;
         }
-        @include responsive--min(md){
+        @include responsive(sm){
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        @include responsive--min(ml){
             padding-left: 137px;
             // margin-top: -20px;
             align-items: start;
@@ -318,6 +321,9 @@
         br {
             @include responsive(lg){
                 display: none;
+            }
+            @include responsive(sm){
+                display: block;
             }
         }
     }
@@ -495,7 +501,8 @@
             margin-left: 0;
         }
         @include responsive(sm){
-            max-width: 100%;
+            width: 90vw;
+            max-height: 320px;
             // padding-top: 56.4%;
             // max-height: 333px;
         }

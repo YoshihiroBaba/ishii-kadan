@@ -10,6 +10,9 @@
     @include responsive(sm){
         height: 60px;
     }
+    &--sub{
+        @extend .l-header;
+    }
     &__inner {
         display: flex;
         height: 100%;
@@ -37,5 +40,8 @@
             width: 70%;
         }
     }
+        &--sub{
+           @extend .l-header__logo;
+        }
     }
 }

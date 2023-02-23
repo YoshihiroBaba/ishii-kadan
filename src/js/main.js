@@ -3,8 +3,8 @@ import '../scss/main.scss';
 
 $(function () {
     // バーガーメニュー
-    $(".c-menu-icon").off('click');
-    $(".c-menu-icon").on('click', function () {
+    $(".c-menu-icon, .c-menu-icon--sub").off('click');
+    $(".c-menu-icon, .c-menu-icon--sub").on('click', function () {
       $("#c-menu-icon").toggleClass("c-menu-open");
       $(".c-gnav__burger").toggleClass("u-dis--show");
       $(window).scroll(function(){
@@ -66,11 +66,10 @@ $(function () {
   });
 let minDate = new Date();
 flatpickr('#calendar', {
-  locale:'ja',
+  lang:'ja',
   minDate: minDate,
-  dateFormat:'Y年m月d日',
+  dateFormat:'Y年m月d日(D)',
   mode:'range',
 });
 
-
-// AOS.init();
+AOS.init();

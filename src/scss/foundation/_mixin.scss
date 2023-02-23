@@ -39,8 +39,10 @@
   $with:0;
   @if($size == lg){
       $with:2500px;
-  } @else if($size == md){
+  } @else if($size == ml){
       $with:1700px;
+  } @else if($size == ms){
+      $with:1080px;
   } @else if($size == sm){
       $with:768px;
   }
